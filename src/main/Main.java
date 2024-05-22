@@ -1,16 +1,16 @@
-package calculator;
+package main;
 
-import controller.CalculatorController;
-import model.Calculator;
+import controller.Controller;
+import model.Model;
 import model.History;
-import view.CalculatorFrame;
+import view.View;
 
 public class Main {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+        Model model = new Model();
         History history = new History();
-        CalculatorFrame view = new CalculatorFrame();
-        CalculatorController controller = new CalculatorController(calculator, history, view);
+        View view = new View();
+        Controller controller = new Controller(view, model);
 
         view.setVisible(true);
     }
