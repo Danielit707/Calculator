@@ -143,6 +143,11 @@ public class View extends javax.swing.JFrame {
         resultField.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         resultField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         resultField.setEnabled(false);
+        resultField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -262,53 +267,11 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_number2FieldActionPerformed
 
-    public History getHistory() {
-        return history;
-    }
+    private void resultFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resultFieldActionPerformed
 
-    public JButton getAddButton() {
-        return addButton;
-    }
-
-    public JButton getClearNumbersButton() {
-        return clearNumbersButton;
-    }
-
-    public JButton getDivideButton() {
-        return divideButton;
-    }
-
-    public JScrollPane getHistoryField() {
-        return historyField;
-    }
-
-    public JButton getMultiplyButton() {
-        return multiplyButton;
-    }
-
-    public JButton getPotencyButton() {
-        return potencyButton;
-    }
-
-    public JButton getSubstractButton() {
-        return substractButton;
-    }
-
-    public JButton getUpdateHistoryButton() {
-        return updateHistoryButton;
-    }
-
-    public JTextField getNumber1Field() {
-        return number1Field;
-    }
-
-    public JTextField getNumber2Field() {
-        return number2Field;
-    }
-
-    public JTextField getResultField() {
-        return resultField;
-    }
+    
 
     /**
      * @param args the command line arguments
@@ -340,7 +303,9 @@ public class View extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Cr
+        });
+    }eate and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new View().setVisible(true);
@@ -349,21 +314,21 @@ public class View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addButton;
-    private javax.swing.JButton clearNumbersButton;
-    private javax.swing.JButton divideButton;
+    public javax.swing.JButton addButton;
+    public javax.swing.JButton clearNumbersButton;
+    public javax.swing.JButton divideButton;
     private javax.swing.JScrollPane historyField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JButton multiplyButton;
-    private javax.swing.JTextField number1Field;
-    private javax.swing.JTextField number2Field;
-    private javax.swing.JButton potencyButton;
-    private javax.swing.JTextField resultField;
-    private javax.swing.JButton substractButton;
-    private javax.swing.JButton updateHistoryButton;
+    public javax.swing.JList<String> jList1;
+    public javax.swing.JButton multiplyButton;
+    public javax.swing.JTextField number1Field;
+    public javax.swing.JTextField number2Field;
+    public javax.swing.JButton potencyButton;
+    public javax.swing.JTextField resultField;
+    public javax.swing.JButton substractButton;
+    public javax.swing.JButton updateHistoryButton;
     // End of variables declaration//GEN-END:variables
 }

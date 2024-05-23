@@ -11,7 +11,7 @@ public class Main {
         History history = new History();
         View view = new View();
         Controller controller = new Controller(view, model);
-
+        controller.init();
         view.setVisible(true);
     }
 }

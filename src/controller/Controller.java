@@ -11,8 +11,8 @@ import java.util.List;
 
 public class Controller implements ActionListener {
     
-    Model model = new Model();
-    View view = new View();
+    private Model model;
+    private View view;
     
     public Controller (){
         throw new UnsupportedOperationException("Not supported yet.");
@@ -23,11 +23,11 @@ public class Controller implements ActionListener {
         this.view = view;
         this.model = model;
         
-        this.view.getAddButton().addActionListener(this);
-        this.view.getSubstractButton().addActionListener(this);
-        this.view.getMultiplyButton().addActionListener(this);
-        this.view.getDivideButton().addActionListener(this);
-        this.view.getPotencyButton().addActionListener(this);
+        this.view.addButton.addActionListener(this);
+        this.view.substractButton.addActionListener(this);
+        this.view.multiplyButton.addActionListener(this);
+        this.view.divideButton.addActionListener(this);
+        this.view.potencyButton.addActionListener(this);
         
     }
     
@@ -35,32 +35,35 @@ public class Controller implements ActionListener {
         
         view.setTitle("Calculator");
         view.setLocationRelativeTo(null);
-        view.getNumber1Field().setText(String.valueOf(model.getNumber1()));
-        view.getNumber2Field().setText(String.valueOf(model.getNumber2()));
+        view.number1Field.setText(String.valueOf(model.getNumber1()));
+        view.number2Field.setText(String.valueOf(model.getNumber2()));
         
     
     }
     
-    @Override
+    
     public void actionPerformed(ActionEvent e){
-        model.setNumber1(Double.parseDouble(view.getNumber1Field().getText()));
-        model.setNumber2(Double.parseDouble(view.getNumber2Field().getText()));
+        model.setNumber1(Double.parseDouble(view.number1Field.getText()));
+        model.setNumber2(Double.parseDouble(view.number2Field.getText()));
         
-        if (e.getSource() == view.getAddButton()){
+        if (e.getSource() == view.addButton){
             model.setOperator("+");
         }
-        if (e.getSource() == view.getSubstractButton()){
+        if (e.getSource() == view.substractButton){
             model.setOperator("-");
         }
-        if (e.getSource() == view.getMultiplyButton()){
+        if (e.getSource() == view.multiplyButton){
             model.setOperator("*");
         }
-        if (e.getSource() == view.getDivideButton()){
+        if (e.getSource() == view.divideButton){
             model.setOperator("/");
         }
-        if (e.getSource() == view.getPotencyButton()){
+        if (e.getSource() == view.potencyButton){
             model.setOperator("**");
         }
+        
+        
+
         
     }
     
