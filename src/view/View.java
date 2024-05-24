@@ -54,7 +54,7 @@ public class View extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         historyField = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        historyList = new javax.swing.JList<>();
         resultField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,9 +136,9 @@ public class View extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Result");
 
-        jList1.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        jList1.setEnabled(false);
-        historyField.setViewportView(jList1);
+        historyList.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        historyList.setEnabled(false);
+        historyField.setViewportView(historyList);
 
         resultField.setEditable(false);
         resultField.addActionListener(new java.awt.event.ActionListener() {
@@ -255,12 +255,6 @@ public class View extends javax.swing.JFrame {
     private void updateHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateHistoryButtonActionPerformed
         // TODO add your handling code here:
    
-     ArrayList<Operation> operationHistory = this.history.getOperations();
-        Collections.reverse(this.history.getOperations());
-        
-        DefaultListModel model = new DefaultListModel();
-        model.addAll(operationHistory);
-        jList1.setModel(model);
     }//GEN-LAST:event_updateHistoryButtonActionPerformed
 
     private void number2FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number2FieldActionPerformed
@@ -317,12 +311,12 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JButton addButton;
     public javax.swing.JButton clearNumbersButton;
     public javax.swing.JButton divideButton;
-    private javax.swing.JScrollPane historyField;
+    public javax.swing.JScrollPane historyField;
+    public javax.swing.JList<String> historyList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    public javax.swing.JList<String> jList1;
     public javax.swing.JButton multiplyButton;
     public javax.swing.JTextField number1Field;
     public javax.swing.JTextField number2Field;

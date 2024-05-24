@@ -10,7 +10,7 @@ public class Main {
         Model model = new Model();
         History history = new History();
         View view = new View();
-        Controller controller = new Controller(view, model);
+        Controller controller = new Controller(view, model, history);
         controller.init();
         view.setVisible(true);
     }

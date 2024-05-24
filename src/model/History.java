@@ -12,17 +12,17 @@ import java.util.ArrayList;
  */
 public class History {
     
-    private ArrayList<Operation> operations;
+    private ArrayList<String> operations;
 
     public History() {
         this.operations = new ArrayList<>();
     }
     
-    public void addOperation(Operation operation) {
+    public void addOperation(String operation) {
         this.operations.add(operation);
     }
 
-    public ArrayList<Operation> getOperations() {
+    public ArrayList<String> getOperations() {
         return operations;
     }
     

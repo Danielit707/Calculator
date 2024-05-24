@@ -8,7 +8,7 @@ package model;
  *
  * @author RYZEN
  */
-public class Substract implements Operation {
+public class Subtract implements Operation {
     
     @Override
     public double calculate (double number1, double number2){
