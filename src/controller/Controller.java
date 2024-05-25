@@ -45,8 +45,8 @@ public class Controller implements ActionListener {
     @Override
 public void actionPerformed(ActionEvent e) {
     if (!view.number1Field.getText().isEmpty() && !view.number2Field.getText().isEmpty()) {
-        double number1 = Double.parseDouble(view.number1Field.getText());
-        double number2 = Double.parseDouble(view.number2Field.getText());
+        String number1 = view.number1Field.getText();
+        String number2 = view.number2Field.getText();
         Response response = null;
 
         if (e.getSource() == view.addButton) {

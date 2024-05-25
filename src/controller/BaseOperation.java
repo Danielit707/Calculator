@@ -6,8 +6,26 @@ package controller;
 import model.Response;
 
 public abstract class BaseOperation {
-    protected boolean validateInput(double number1, double number2) {
-        return hasThreeDecimals(number1) && hasThreeDecimals(number2);
+    protected boolean validateInput(String number1String, String number2String) {
+        boolean isNumeric;
+        boolean hasThreeDecimals = false;
+
+        try {
+            double number1 = toDouble(number1String);
+            double number2 = toDouble(number2String);
+            isNumeric = true;
+            
+            if(hasThreeDecimals(number1) && hasThreeDecimals(number2)){
+                hasThreeDecimals = true;
+            }
+        
+        } catch (NumberFormatException exception){
+            isNumeric = false;
+            
+        }
+        
+        return isNumeric && hasThreeDecimals;
+        
     }
 
     protected boolean hasThreeDecimals(double number) {
@@ -18,7 +36,15 @@ public abstract class BaseOperation {
     protected double roundToThreeDecimals(double number) {
         return Math.round(number * 1000.0) / 1000.0;
     }
+    
+    protected double toDouble (String numberString){
+        
+       double numberDouble = Double.parseDouble(numberString);
+       
+       return numberDouble;
 
-    public abstract Response execute(double number1, double number2);
+    }
+
+    public abstract Response execute(String number1String, String number2String);
 }
 
