@@ -8,24 +8,24 @@ import view.View;
 public class Controller implements ActionListener {
     
     private View view;
-    private History history;
+    private Model model;
+    private HistoryController historyController;
     private BaseOperation addController;
     private BaseOperation subtractController;
     private BaseOperation multiplyController;
     private BaseOperation divideController;
     private BaseOperation potencyController;
-    private HistoryController historyController;
 
     public Controller(View view, Model model, History history) {
         this.view = view;
-        this.history = history;
+        this.model = model;
+        this.historyController = new HistoryController(history, view);
 
-        this.addController = new AddController(history);
-        this.subtractController = new SubtractController(history);
-        this.multiplyController = new MultiplyController(history);
-        this.divideController = new DivideController(history);
-        this.potencyController = new PotencyController(history);
-        this.historyController = new HistoryController(history);
+        this.addController = new AddController(historyController);
+        this.subtractController = new SubtractController(historyController);
+        this.multiplyController = new MultiplyController(historyController);
+        this.divideController = new DivideController(historyController);
+        this.potencyController = new PotencyController(historyController);
 
         this.view.addButton.addActionListener(this);
         this.view.substractButton.addActionListener(this);
@@ -33,15 +33,18 @@ public class Controller implements ActionListener {
         this.view.divideButton.addActionListener(this);
         this.view.potencyButton.addActionListener(this);
         this.view.updateHistoryButton.addActionListener(this);
+        this.view.clearNumbersButton.addActionListener(this);
     }
 
     public void init() {
         view.setTitle("Calculator");
         view.setLocationRelativeTo(null);
+        historyController.getHistory(); // Inicializar el historial al inicio
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+public void actionPerformed(ActionEvent e) {
+    if (!view.number1Field.getText().isEmpty() && !view.number2Field.getText().isEmpty()) {
         double number1 = Double.parseDouble(view.number1Field.getText());
         double number2 = Double.parseDouble(view.number2Field.getText());
         Response response = null;
@@ -57,19 +60,29 @@ public class Controller implements ActionListener {
         } else if (e.getSource() == view.potencyButton) {
             response = potencyController.execute(number1, number2);
         } else if (e.getSource() == view.updateHistoryButton) {
-            view.historyList.addElement(historyController.getHistory());
+            historyController.getHistory();
             return;
         }
 
         if (response != null) {
-            if(response.getStatusCode() == 400){            
+            if (response.getStatusCode() == 400) {            
                 view.resultField.setText(response.getMessage());
             } else {
-            view.resultField.setText(String.valueOf(response.getResult()));
+                view.resultField.setText(String.valueOf(response.getResult()));
             }
         }
+    } else {
+        // Manejar el caso en que los campos de texto están vacíos
+        // Por ejemplo, mostrar un mensaje de error al usuario
+    }
+
+    if (e.getSource() == view.clearNumbersButton) {
+        view.number1Field.setText("");
+        view.number2Field.setText("");
+        view.resultField.setText("");
     }
 }
 
+}
 
 

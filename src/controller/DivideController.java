@@ -7,10 +7,10 @@ package controller;
 import model.*;
 
 public class DivideController extends BaseOperation {
-    private History history;
+    private HistoryController historyC;
 
-    public DivideController(History history) {
-        this.history = history;
+    public DivideController(HistoryController historyC) {
+        this.historyC = historyC;
     }
 
     @Override
@@ -18,7 +18,7 @@ public class DivideController extends BaseOperation {
         if (validateInput(number1, number2)) {
             if (number2 != 0) {
                 double result = roundToThreeDecimals(number1 / number2);
-                history.addOperation(number1 + " / " + number2 + " = " + result);
+                this.historyC.updateHistory(number1, number2, "/", result);
                 return new Response("Success", 200, result);
             } else {
                 return new Response("Division by zero", 400, 0);
