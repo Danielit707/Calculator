@@ -43,23 +43,26 @@ public class Controller implements ActionListener {
     }
 
     @Override
-public void actionPerformed(ActionEvent e) {
-    if (!view.number1Field.getText().isEmpty() && !view.number2Field.getText().isEmpty()) {
-        String number1 = view.number1Field.getText();
-        String number2 = view.number2Field.getText();
+    public void actionPerformed(ActionEvent e) {
         Response response = null;
+        if (!view.number1Field.getText().isEmpty() && !view.number2Field.getText().isEmpty()) {
+            String number1 = view.number1Field.getText();
+            String number2 = view.number2Field.getText();
+        
 
-        if (e.getSource() == view.addButton) {
-            response = addController.execute(number1, number2);
-        } else if (e.getSource() == view.substractButton) {
-            response = subtractController.execute(number1, number2);
-        } else if (e.getSource() == view.multiplyButton) {
-            response = multiplyController.execute(number1, number2);
-        } else if (e.getSource() == view.divideButton) {
-            response = divideController.execute(number1, number2);
-        } else if (e.getSource() == view.potencyButton) {
-            response = potencyController.execute(number1, number2);
-        } else if (e.getSource() == view.updateHistoryButton) {
+            if (e.getSource() == view.addButton) {
+                response = addController.execute(number1, number2);
+            } else if (e.getSource() == view.substractButton) {
+                response = subtractController.execute(number1, number2);
+            } else if (e.getSource() == view.multiplyButton) {
+                response = multiplyController.execute(number1, number2);
+            } else if (e.getSource() == view.divideButton) {
+                response = divideController.execute(number1, number2);
+            } else if (e.getSource() == view.potencyButton) {
+                response = potencyController.execute(number1, number2);
+            }
+        }
+        if (e.getSource() == view.updateHistoryButton) {
             historyController.getHistory();
             return;
         }
@@ -71,18 +74,14 @@ public void actionPerformed(ActionEvent e) {
                 view.resultField.setText(String.valueOf(response.getResult()));
             }
         }
-    } else {
-        // Manejar el caso en que los campos de texto están vacíos
-        // Por ejemplo, mostrar un mensaje de error al usuario
-    }
+    
 
-    if (e.getSource() == view.clearNumbersButton) {
-        view.number1Field.setText("");
-        view.number2Field.setText("");
-        view.resultField.setText("");
+        if (e.getSource() == view.clearNumbersButton) {
+            view.number1Field.setText("");
+            view.number2Field.setText("");
+            view.resultField.setText("");
+        }
     }
-}
-
 }
 
 
