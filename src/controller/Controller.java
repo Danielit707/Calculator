@@ -39,7 +39,7 @@ public class Controller implements ActionListener {
     public void init() {
         view.setTitle("Calculator");
         view.setLocationRelativeTo(null);
-        historyController.getHistory(); // Inicializar el historial al inicio
+        historyController.getHistory(); 
     }
 
     @Override
@@ -51,15 +51,15 @@ public class Controller implements ActionListener {
         
 
             if (e.getSource() == view.addButton) {
-                response = addController.execute(number1, number2);
+                response = addController.execute(number1, number2, "+");
             } else if (e.getSource() == view.substractButton) {
-                response = subtractController.execute(number1, number2);
+                response = subtractController.execute(number1, number2, "-");
             } else if (e.getSource() == view.multiplyButton) {
-                response = multiplyController.execute(number1, number2);
+                response = multiplyController.execute(number1, number2, "*");
             } else if (e.getSource() == view.divideButton) {
-                response = divideController.execute(number1, number2);
+                response = divideController.execute(number1, number2, "/");
             } else if (e.getSource() == view.potencyButton) {
-                response = potencyController.execute(number1, number2);
+                response = potencyController.execute(number1, number2, "^");
             }
         }
         if (e.getSource() == view.updateHistoryButton) {
