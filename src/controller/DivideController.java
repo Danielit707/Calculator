@@ -3,12 +3,11 @@ package controller;
 import model.*;
 
 public class DivideController extends BaseOperation {
-    private String operator = "/";
         
-    public DivideController(HistoryController historyC) {
-        super(historyC);
+    public DivideController(HistoryController historyC, Model model) {
+        super(historyC, model);
         this.operation = new Divide();
-        this.operator = "/";
+        this.model.setOperator("/");
     }
     
 }

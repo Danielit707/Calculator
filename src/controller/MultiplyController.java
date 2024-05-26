@@ -3,12 +3,12 @@ package controller;
 import model.*;
 
 public class MultiplyController extends BaseOperation {
-    private String operator = "*";
         
-    public MultiplyController(HistoryController historyC) {
-        super(historyC);
+    public MultiplyController(HistoryController historyC, Model model) {
+        super(historyC, model);
         this.operation = new Multiply();
-        this.operator = "*";
+        this.model.setOperator("*");
     }
+    
 }
 

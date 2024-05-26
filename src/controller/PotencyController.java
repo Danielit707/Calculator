@@ -3,12 +3,12 @@ package controller;
 import model.*;
 
 public class PotencyController extends BaseOperation {
-    private String operator = "^";
         
-    public PotencyController(HistoryController historyC) {
-        super(historyC);
+    public PotencyController(HistoryController historyC, Model model) {
+        super(historyC, model);
         this.operation = new Potency();
-        this.operator = "^";
+        this.model.setOperator("^");
     }
+    
 }
 

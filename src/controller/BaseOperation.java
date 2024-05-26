@@ -6,10 +6,12 @@ public abstract class BaseOperation {
 
     protected Operation operation;  
     protected String operator;
+    protected Model model;
     private HistoryController historyC;
 
-    public BaseOperation(HistoryController historyC) {
+    public BaseOperation(HistoryController historyC, Model model) {
         this.historyC = historyC;
+        this.model = model;
     }
 
     protected boolean validateInput(String number1String, String number2String, String operator) {
@@ -56,11 +58,11 @@ public abstract class BaseOperation {
 
     public Response execute(String number1String, String number2String, String operator) {
         if (validateInput(number1String, number2String, operator)) {
-            double number1 = toDouble(number1String);
-            double number2 = toDouble(number2String);
-            double result = roundToThreeDecimals(operation.calculate(number1, number2));
-            this.historyC.updateHistory(number1, number2, operator, result);
-            return new Response("Success", 200, result);
+            model.setNumber1(toDouble(number1String));
+            model.setNumber2(toDouble(number2String));
+            model.setTotal(roundToThreeDecimals(operation.calculate(model.getNumber1(), model.getNumber2())));
+            this.historyC.updateHistory(model.getNumber1(), model.getNumber2(), operator, model.getTotal());
+            return new Response("Success", 200, model.getTotal());
         } else {
             return new Response("Invalid input", 400, 0);
         }

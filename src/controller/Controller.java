@@ -21,11 +21,11 @@ public class Controller implements ActionListener {
         this.model = model;
         this.historyController = new HistoryController(history, view);
 
-        this.addController = new AddController(historyController);
-        this.subtractController = new SubtractController(historyController);
-        this.multiplyController = new MultiplyController(historyController);
-        this.divideController = new DivideController(historyController);
-        this.potencyController = new PotencyController(historyController);
+        this.addController = new AddController(historyController, model);
+        this.subtractController = new SubtractController(historyController, model);
+        this.multiplyController = new MultiplyController(historyController, model);
+        this.divideController = new DivideController(historyController, model);
+        this.potencyController = new PotencyController(historyController, model);
 
         this.view.addButton.addActionListener(this);
         this.view.substractButton.addActionListener(this);

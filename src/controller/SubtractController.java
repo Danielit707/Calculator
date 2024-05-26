@@ -3,11 +3,11 @@ package controller;
 import model.*;
 
 public class SubtractController extends BaseOperation {
-    private String operator = "-";
         
-    public SubtractController(HistoryController historyC) {
-        super(historyC);
+    public SubtractController(HistoryController historyC, Model model) {
+        super(historyC, model);
         this.operation = new Subtract();
-        this.operator = "-";
+        this.model.setOperator("-");
     }
+    
 }
