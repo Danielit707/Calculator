@@ -7,11 +7,13 @@ package controller;
 import model.*;
 
 public class AddController extends BaseOperation {
-         
+             
     public AddController(HistoryController historyC, Model model) {
+        
         super(historyC, model);
+        this.operator = "+";
         this.operation = new Add();
-        this.model.setOperator("+");
+        
     }
     
 }

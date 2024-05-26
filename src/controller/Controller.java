@@ -51,15 +51,15 @@ public class Controller implements ActionListener {
         
 
             if (e.getSource() == view.addButton) {
-                response = addController.execute(number1, number2, "+");
+                response = addController.execute(number1, number2);
             } else if (e.getSource() == view.substractButton) {
-                response = subtractController.execute(number1, number2, "-");
+                response = subtractController.execute(number1, number2);
             } else if (e.getSource() == view.multiplyButton) {
-                response = multiplyController.execute(number1, number2, "*");
+                response = multiplyController.execute(number1, number2);
             } else if (e.getSource() == view.divideButton) {
-                response = divideController.execute(number1, number2, "/");
+                response = divideController.execute(number1, number2);
             } else if (e.getSource() == view.potencyButton) {
-                response = potencyController.execute(number1, number2, "^");
+                response = potencyController.execute(number1, number2);
             }
         }
         if (e.getSource() == view.updateHistoryButton) {
@@ -69,9 +69,10 @@ public class Controller implements ActionListener {
 
         if (response != null) {
             if (response.getStatusCode() == 400) {            
-                view.resultField.setText(response.getMessage());
+                view.resultField.setText("Error " + response.getStatusCode() + ": " + response.getMessage());
             } else {
                 view.resultField.setText(String.valueOf(response.getResult()));
+                System.out.println("(" + response.getStatusCode() + ")" + response.getMessage());
             }
         }
     

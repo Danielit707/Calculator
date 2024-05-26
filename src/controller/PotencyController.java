@@ -7,7 +7,7 @@ public class PotencyController extends BaseOperation {
     public PotencyController(HistoryController historyC, Model model) {
         super(historyC, model);
         this.operation = new Potency();
-        this.model.setOperator("^");
+        this.operator = "^";
     }
     
 }
