@@ -1,5 +1,8 @@
-package controller;
+package controller.operations;
 
+import controller.HistoryController;
+import controller.operations.BaseOperation;
+import model.operations.Divide;
 import model.*;
 
 public class DivideController extends BaseOperation {

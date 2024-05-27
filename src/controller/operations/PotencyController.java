@@ -1,5 +1,8 @@
-package controller;
+package controller.operations;
 
+import controller.HistoryController;
+import controller.operations.BaseOperation;
+import model.operations.Potency;
 import model.*;
 
 public class PotencyController extends BaseOperation {

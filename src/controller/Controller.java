@@ -1,5 +1,11 @@
 package controller;
 
+import controller.operations.PotencyController;
+import controller.operations.SubtractController;
+import controller.operations.MultiplyController;
+import controller.operations.DivideController;
+import controller.operations.BaseOperation;
+import controller.operations.AddController;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import model.*;

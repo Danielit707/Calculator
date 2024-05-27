@@ -4,6 +4,8 @@
  */
 package model;
 
+import model.operations.Operation;
+
 /**
  *
  * @author RYZEN

@@ -6,7 +6,7 @@ package view;
 
 import model.Model;
 import model.History;
-import model.Operation;
+import model.operations.Operation;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.DefaultListModel;

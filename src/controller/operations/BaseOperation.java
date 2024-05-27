@@ -1,5 +1,7 @@
-package controller;
+package controller.operations;
 
+import controller.HistoryController;
+import model.operations.Operation;
 import model.*;
 
 public abstract class BaseOperation {
