@@ -1,5 +1,6 @@
 package controller.operations;
 
+import model.operations.Multiply;
 import controller.HistoryController;
 import controller.operations.BaseOperation;
 import model.*;

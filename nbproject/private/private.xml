@@ -6,22 +6,23 @@
             <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/Controller.java</file>
             <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/HistoryController.java</file>
             <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/main/Main.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/PotencyController.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/SubtractController.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/MultiplyController.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/ResponseController.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/operations/BaseOperation.java</file>
             <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/Multiply.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/BaseOperation.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/Potency.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/Divide.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/Subtract.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/Operation.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/operations/Potency.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/operations/Divide.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/operations/PotencyController.java</file>
             <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/Model.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/Add.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/DivideController.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/operations/MultiplyController.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/operations/SubtractController.java</file>
             <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/view/View.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/operations/DivideController.java</file>
             <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/Response.java</file>
-            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/AddController.java</file>
             <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/History.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/controller/operations/AddController.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/operations/Operation.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/operations/Add.java</file>
+            <file>file:/C:/Users/RYZEN/Documents/calculator/Calculator/src/model/operations/Subtract.java</file>
         </group>
     </open-files>
 </project-private>
